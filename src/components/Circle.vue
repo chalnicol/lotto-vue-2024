@@ -38,6 +38,7 @@ onMounted ( () => {
     isMounted.value = true;
 });
 
+    
 watchEffect ( () => {
 
     // console.log("watchEffect");
@@ -45,11 +46,12 @@ watchEffect ( () => {
     if (isMounted.value) {
 
         gsap.killTweensOf(el.value);
+
         gsap.set ( el.value, { backgroundColor: '#fff' });
 
         if ( props.blink ) {
 
-            gsap.fromTo (el.value, { backgroundColor: '#fff'}, { backgroundColor:'#00ff00', ease : 'linear', yoyo: true, repeat: -1, duration: 0.4, });
+            gsap.fromTo (el.value, { backgroundColor: '#fff'}, { backgroundColor:'#00c30066', ease : 'linear', yoyo: true, repeat: -1, duration: 0.4, delay:0.3 });
         }
     }
 });

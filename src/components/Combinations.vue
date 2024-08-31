@@ -2,14 +2,14 @@
   <div v-if="combinations.length > 0">
     <div class="mt-5 md:mt-12">
 
-      <div v-for="(combination, i) in combinations" :key="i" class="flex items-center justify-center gap-5 md:gap-6 mb-3 md:mb-6 select-none w-full">
+      <div v-for="(combination, i) in combinations" :key="i" class="flex items-center justify-center gap-5 md:gap-6 mb-3 md:mb-5 select-none w-full">
           <Circle v-for="(el, j) in combination" :key="j" :val="el" :blink="blink[i][j]"/>
       </div>
 
     </div>
-    <hr />
+    <hr/>
 
-    <div class="flex items-center justify-center gap-5 md:gap-6 mb-3 md:mb-6 select-none w-full">
+    <div class="flex items-center justify-center gap-5 md:gap-6 mb-3 md:mb-6 select-none w-full my-5">
           <Circle v-for="(fin, k) in finCombination" :key="k" :val="fin"/>
       </div>
 

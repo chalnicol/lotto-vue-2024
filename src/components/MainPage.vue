@@ -6,9 +6,10 @@
         <ScheduledGames :schedule="scheduledGamesToday" @showFullSchedule="showFullSchedule"/>
 
         <SelectForm :options="lottoGames" @generate="startGeneration" :isButtonDisabled="isGenerating"/>
-        
+    
         <Combinations :combinations="combinations" />
         
+
         <Schedule :games="lottoGames" :show="isModalVisible" @close="isModalVisible=false"/>
 
     </div>
@@ -36,23 +37,23 @@
     }
 
     const startGeneration = (game) => {
-        isGenerating.value = true;
+        // isGenerating.value = true;
         selectedGame.value = game;
         combinations.value = generateNumbeOfCombinations(6, game);
 
-        let count = 0;
+        // let count = 0;
 
-        let timer = setInterval( () => {
-            count++;
-            console.log("tick...", count);
-            combinations.value = generateNumbeOfCombinations(6, game);
+        // let timer = setInterval( () => {
+        //     count++;
+        //     console.log("tick...", count);
+        //     combinations.value = generateNumbeOfCombinations(6, game);
 
-            if (count >= 20 ) {
-                isGenerating.value = false;
-                count = 0;
-                clearInterval(timer);
-            }
-        }, 2000 );
+        //     if (count >= 20 ) {
+        //         isGenerating.value = false;
+        //         count = 0;
+        //         clearInterval(timer);
+        //     }
+        // }, 2000 );
 
 
     }
