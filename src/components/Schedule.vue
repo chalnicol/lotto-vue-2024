@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="isVisible" class="fixed w-full h-full max-w-[550px] flex items-center justify-center top-0"> 
+    <div :class="isVisible ? 'visible' : 'invisible'" class="fixed w-full h-full max-w-[550px] flex items-center justify-center top-0"> 
 
         <div class="absolute w-full h-full bg-black opacity-[0.8]" @click="closeModal"></div>
 
@@ -72,6 +72,7 @@
   watch(() => props.show, (newValue) => {
     isVisible.value = newValue;
     if (newValue) {
+      animateOpen ();
       // gsap.delayedCall(0.3, ()=> animateOpen() )
     }
   });
